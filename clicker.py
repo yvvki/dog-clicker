@@ -10,7 +10,7 @@ RED_NORMAL = (220, 60, 60)
 RED_DARK = (130, 30, 30)
 
 # Paths
-script_dir = os.path.dirname(os.path.abspath(__file__))
+script_dir = os.path.dirname(os.path.realpath(__file__))
 ON_SOUND_FILE = os.path.join(script_dir, "CLICKER-ON.wav")
 OFF_SOUND_FILE = os.path.join(script_dir, "CLICKER-OFF.wav")
 
