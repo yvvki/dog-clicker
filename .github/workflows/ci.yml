@@ -46,6 +46,7 @@ jobs:
           cache: true
       - run: flutter pub get
       - run: flutter build apk --debug
+      - run: tree build/
       - uses: actions/upload-artifact@v6
         with:
           name: android-debug
@@ -67,7 +68,8 @@ jobs:
           channel: stable
           cache: true
       - run: flutter pub get
-      - run: flutter build linux
+      - run: flutter build linux --debug
+      - run: tree build/
       - uses: actions/upload-artifact@v6
         with:
           name: linux-debug
@@ -86,6 +88,7 @@ jobs:
           cache: true
       - run: flutter pub get
       - run: flutter build windows --debug
+      - run: tree build/
       - uses: actions/upload-artifact@v6
         with:
           name: windows-debug
