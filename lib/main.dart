@@ -7,37 +7,57 @@ void main() {
   runApp(ClickerApp());
 }
 
-class ClickerApp extends StatelessWidget {
+class ClickerApp extends StatefulWidget {
   const ClickerApp({super.key});
+
+  @override
+  State<ClickerApp> createState() => _ClickerAppState();
+}
+
+class _ClickerAppState extends State<ClickerApp> {
+  static const _brandColor = Color(0xfff30069);
+  bool _useDynamicColor = true;
+
+  ColorScheme _resolveScheme({
+    required ColorScheme? dynamicScheme,
+    required Brightness brightness,
+  }) {
+    final fallback = ColorScheme.fromSeed(
+      seedColor: _brandColor,
+      brightness: brightness,
+    );
+    return !_useDynamicColor
+        ? fallback
+        : dynamicScheme?.harmonized() ?? fallback;
+  }
 
   @override
   Widget build(BuildContext context) {
     return DynamicColorBuilder(
       builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
-        const brandColor = Color(0xfff30069);
+        final lightScheme = _resolveScheme(
+          dynamicScheme: lightDynamic,
+          brightness: Brightness.light,
+        );
+        final darkScheme = _resolveScheme(
+          dynamicScheme: darkDynamic,
+          brightness: Brightness.dark,
+        );
 
         return MaterialApp(
           title: 'Clicker',
-          theme: ThemeData(
-            colorScheme: lightDynamic != null
-                ? lightDynamic.harmonized()
-                : ColorScheme.fromSeed(
-                    seedColor: brandColor,
-                    brightness: Brightness.light,
-                  ),
-          ),
-          darkTheme: ThemeData(
-            colorScheme: darkDynamic != null
-                ? darkDynamic.harmonized()
-                : ColorScheme.fromSeed(
-                    seedColor: brandColor,
-                    brightness: Brightness.dark,
-                  ),
-          ),
+          theme: ThemeData(colorScheme: lightScheme),
+          darkTheme: ThemeData(colorScheme: darkScheme),
           home: ClickerHomePage(
+            title: 'Clicker',
             assetDown: 'assets/clicker-down.wav',
             assetUp: 'assets/clicker-up.wav',
+            useDynamicColor: _useDynamicColor,
+            onUseDynamicColorChanged: (value) {
+              setState(() => _useDynamicColor = value);
+            },
           ),
+          
         );
       },
     );
@@ -47,12 +67,18 @@ class ClickerApp extends StatelessWidget {
 class ClickerHomePage extends StatefulWidget {
   const ClickerHomePage({
     super.key,
+    required this.title,
     required this.assetDown,
     required this.assetUp,
+    required this.useDynamicColor,
+    required this.onUseDynamicColorChanged,
   });
 
+  final String title;
   final String assetDown;
   final String assetUp;
+  final bool useDynamicColor;
+  final ValueChanged<bool> onUseDynamicColorChanged;
 
   @override
   State<ClickerHomePage> createState() => _ClickerHomePageState();
@@ -102,6 +128,19 @@ class _ClickerHomePageState extends State<ClickerHomePage> {
     final diameter = MediaQuery.of(context).size.shortestSide * 0.5;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            tooltip: 'Toggle dynamic color',
+            icon: Icon(
+              widget.useDynamicColor ? Icons.palette : Icons.palette_outlined,
+            ),
+            onPressed: () => widget.onUseDynamicColorChanged(!widget.useDynamicColor),
+          ),
+        ],
+      ),
       body: Center(
         child: ClipOval(
           child: Listener(
