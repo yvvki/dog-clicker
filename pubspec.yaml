@@ -35,6 +35,7 @@ dependencies:
 
   audio_session: ^0.2.0
   flutter_soloud: ^3.4.0
+  shared_preferences: ^2.5.0
 
 dev_dependencies:
   flutter_test:

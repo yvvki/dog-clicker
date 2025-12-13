@@ -1,6 +1,7 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_soloud/flutter_soloud.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,7 +17,15 @@ class ClickerApp extends StatefulWidget {
 
 class _ClickerAppState extends State<ClickerApp> {
   static const _brandColor = Color(0xfff30069);
+
+  static const _useDynamicColorKey = 'use_dynamic_color';
   bool _useDynamicColor = true;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _restoreDynamicColor());
+  }
 
   ColorScheme _resolveScheme({
     required ColorScheme? dynamicScheme,
@@ -53,14 +62,28 @@ class _ClickerAppState extends State<ClickerApp> {
             assetDown: 'assets/clicker-down.wav',
             assetUp: 'assets/clicker-up.wav',
             useDynamicColor: _useDynamicColor,
-            onUseDynamicColorChanged: (value) {
-              setState(() => _useDynamicColor = value);
-            },
+            onUseDynamicColorChanged: _setDynamicColor,
           ),
           
         );
       },
     );
+  }
+
+  Future<void> _restoreDynamicColor() async {
+    final prefs = await SharedPreferences.getInstance();
+    final stored = prefs.getBool(_useDynamicColorKey);
+
+    if (stored != null && stored != _useDynamicColor) {
+      setState(() => _useDynamicColor = stored);
+    }
+  }
+
+  Future<void> _setDynamicColor(bool value) async {
+    setState(() => _useDynamicColor = value);
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_useDynamicColorKey, value);
   }
 }
 
