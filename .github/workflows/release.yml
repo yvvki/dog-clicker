@@ -47,7 +47,7 @@ jobs:
 
       - uses: actions/upload-artifact@v6
         with:
-          name: android.apk
+          name: android
           path: build/app/outputs/flutter-apk/app-release.apk
       # - uses: actions/upload-artifact@v6
       #   with:
@@ -75,7 +75,7 @@ jobs:
       - uses: actions/upload-artifact@v6
         with:
           name: linux
-          path: linux-release.tar.gz
+          path: linux.tar.gz
 
   build-windows:
     name: Build Windows
@@ -107,5 +107,5 @@ jobs:
       - uses: actions/checkout@v6
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "app-release.a*,linux-release.tar.gz,windows-release.zip"
+          artifacts: "android.*,linux,windows"
           generateReleaseNotes: true
