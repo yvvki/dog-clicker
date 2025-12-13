@@ -46,6 +46,7 @@ jobs:
           cache: true
       - run: flutter pub get
       - run: flutter build apk --debug
+      - run: flutter build appbundle --debug
       - run: tree build/
       - uses: actions/upload-artifact@v6
         with:
