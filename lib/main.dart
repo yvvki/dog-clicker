@@ -25,7 +25,6 @@ class ClickerApp extends StatelessWidget {
                     seedColor: brandColor,
                     brightness: Brightness.light,
                   ),
-            useMaterial3: true,
           ),
           darkTheme: ThemeData(
             colorScheme: darkDynamic != null
@@ -34,7 +33,6 @@ class ClickerApp extends StatelessWidget {
                     seedColor: brandColor,
                     brightness: Brightness.dark,
                   ),
-            useMaterial3: true,
           ),
           home: ClickerHomePage(
             assetDown: 'assets/clicker-down.wav',
