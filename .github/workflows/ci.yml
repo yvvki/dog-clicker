@@ -10,6 +10,10 @@ on:
 env:
   NO_OPUS_OGG_LIBS: 1
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   qc:
     name: Quality Check
