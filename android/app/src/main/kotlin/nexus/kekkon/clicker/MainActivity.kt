@@ -1,4 +1,4 @@
-package com.example.clicker
+package nexus.kekkon.clicker
 
 import io.flutter.embedding.android.FlutterActivity
 
