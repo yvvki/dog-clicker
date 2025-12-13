@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="dog-clicker.svg"
+   inkscape:export-filename="foreground.png"
+   inkscape:export-xdpi="288"
+   inkscape:export-ydpi="288"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="1.016466"
+     inkscape:cx="179.54364"
+     inkscape:cy="180.03554"
+     inkscape:window-width="1684"
+     inkscape:window-height="1059"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:export-bgcolor="#f3006900" />
+  <defs
+     id="defs1">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter51"
+       x="-0.024870466"
+       y="-0.024870466"
+       width="1.0601036"
+       height="1.0497409">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         id="feFlood50" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="4.000000"
+         id="feGaussianBlur50" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="4.000000"
+         dy="0.000000"
+         id="feOffset50" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite50" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite51" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Lapis 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#f30069;fill-opacity:1;stroke-width:13.1907"
+       id="path1"
+       cx="256"
+       cy="-256"
+       r="193"
+       transform="rotate(90)" />
+    <g
+       id="g2"
+       transform="rotate(90,256,256)">
+      <path
+         style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:56;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+         id="path2"
+         sodipodi:type="arc"
+         sodipodi:cx="256"
+         sodipodi:cy="256"
+         sodipodi:rx="128"
+         sodipodi:ry="128"
+         sodipodi:start="0.34906585"
+         sodipodi:end="1.7453293"
+         sodipodi:arc-type="arc"
+         d="M 376.28066,299.77858 A 128,128 0 0 1 233.77303,382.05539"
+         sodipodi:open="true" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:56;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="path2-1"
+         sodipodi:type="arc"
+         sodipodi:cx="256"
+         sodipodi:cy="256"
+         sodipodi:rx="128"
+         sodipodi:ry="128"
+         sodipodi:start="2.443461"
+         sodipodi:end="3.8397244"
+         sodipodi:arc-type="arc"
+         d="m 157.94631,338.27681 a 128,128 0 0 1 10e-6,-164.55363"
+         sodipodi:open="true"
+         inkscape:label="path3" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:56;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="path2-3"
+         sodipodi:type="arc"
+         sodipodi:cx="256"
+         sodipodi:cy="256"
+         sodipodi:rx="128"
+         sodipodi:ry="128"
+         sodipodi:start="4.5378561"
+         sodipodi:end="5.9341195"
+         sodipodi:arc-type="arc"
+         d="m 233.77304,129.94461 a 128,128 0 0 1 142.50762,82.27682"
+         sodipodi:open="true"
+         inkscape:label="path4" />
+    </g>
+    <path
+       d="m 192,243.30327 a 35.199889,35.199889 0 0 1 61.38221,-23.52633 3.5839888,3.5839888 0 0 0 5.23518,0 35.135891,35.135891 0 0 1 61.38221,23.52633 c 0,14.65596 -9.59997,25.59992 -19.19993,35.19989 l -35.1487,34.00309 a 12.79996,12.79996 0 0 1 -19.19994,0.1216 L 211.19994,278.50316 C 201.59997,268.90319 192,258.02323 192,243.30327"
+       id="path1-2"
+       style="fill:#ffffff;stroke-width:6.39997"
+       inkscape:label="heart" />
+  </g>
+</svg>
