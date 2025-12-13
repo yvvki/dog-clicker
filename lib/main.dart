@@ -14,7 +14,7 @@ class ClickerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return DynamicColorBuilder(
       builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
-        const brandColor = Colors.red;
+        const brandColor = Color(0xfff30069);
 
         return MaterialApp(
           title: 'Clicker',
