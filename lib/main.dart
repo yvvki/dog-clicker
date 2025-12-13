@@ -1,3 +1,4 @@
+import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,34 @@ class ClickerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Clicker', home: const ClickerHomePage());
+    return DynamicColorBuilder(
+      builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
+        const brandColor = Colors.red;
+
+        return MaterialApp(
+          title: 'Clicker',
+          theme: ThemeData(
+            colorScheme: lightDynamic != null
+                ? lightDynamic.harmonized()
+                : ColorScheme.fromSeed(
+                    seedColor: brandColor,
+                    brightness: Brightness.light,
+                  ),
+            useMaterial3: true,
+          ),
+          darkTheme: ThemeData(
+            colorScheme: darkDynamic != null
+                ? darkDynamic.harmonized()
+                : ColorScheme.fromSeed(
+                    seedColor: brandColor,
+                    brightness: Brightness.dark,
+                  ),
+            useMaterial3: true,
+          ),
+          home: const ClickerHomePage(),
+        );
+      },
+    );
   }
 }
 
