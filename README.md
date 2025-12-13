@@ -1,5 +1,9 @@
 # 🐶 Dog Clicker
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Release](https://img.shields.io/github/v/release/yvvki/dog-clicker)](https://github.com/yvvki/dog-clicker/releases)
+[![CI](https://github.com/yvvki/dog-clicker/actions/workflows/ci.yml/badge.svg)](https://github.com/yvvki/dog-clicker/actions/workflows/ci.yml)
+
 A latency-optimized clicker in Flutter.
 
 > Arf~
