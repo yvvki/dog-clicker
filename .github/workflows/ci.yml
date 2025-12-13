@@ -93,5 +93,5 @@ jobs:
       - uses: actions/upload-artifact@v6
         with:
           name: windows-debug
-          path: build/windows/runner/Debug/
+          path: build/windows/x64/runner/Debug/
           retention-days: 5
