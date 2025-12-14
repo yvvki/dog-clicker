@@ -1,6 +1,7 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_soloud/flutter_soloud.dart';
+import 'package:flutter_window_close/flutter_window_close.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -64,7 +65,6 @@ class _ClickerAppState extends State<ClickerApp> {
             useDynamicColor: _useDynamicColor,
             onUseDynamicColorChanged: _setDynamicColor,
           ),
-          
         );
       },
     );
@@ -126,6 +126,11 @@ class _ClickerHomePageState extends State<ClickerHomePage> {
       _audioDown = await _soloud.loadAsset(widget.assetDown);
       _audioUp = await _soloud.loadAsset(widget.assetUp);
     });
+
+    FlutterWindowClose.setWindowShouldCloseHandler(() async {
+      Navigator.of(context).pop();
+      return true;
+    });
   }
 
   @override
@@ -160,7 +165,8 @@ class _ClickerHomePageState extends State<ClickerHomePage> {
             icon: Icon(
               widget.useDynamicColor ? Icons.palette : Icons.palette_outlined,
             ),
-            onPressed: () => widget.onUseDynamicColorChanged(!widget.useDynamicColor),
+            onPressed: () =>
+                widget.onUseDynamicColorChanged(!widget.useDynamicColor),
           ),
         ],
       ),
