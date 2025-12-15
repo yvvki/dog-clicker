@@ -96,3 +96,20 @@ jobs:
           name: windows-debug
           path: build/windows/x64/runner/Debug/
           retention-days: 5
+
+  build-web:
+    name: Build Web
+    runs-on: ubuntu-latest
+    needs: qc
+    steps:
+      - uses: actions/checkout@v6
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build web --wasm --debug
+      - uses: actions/upload-artifact@v6
+        with:
+          name: web-debug
+          path: build/web/
