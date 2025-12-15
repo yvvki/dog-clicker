@@ -94,7 +94,7 @@ jobs:
           path: windows.zip
 
   build-web:
-    name: Deploy Web
+    name: Build Web
     runs-on: ubuntu-latest
     needs: qc
     steps:
