@@ -105,7 +105,7 @@ jobs:
           cache: true
       - run: flutter pub get
       - run: flutter build web --wasm --release
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-pages-artifact@v4
         with:
           name: web
           path: build/web/
