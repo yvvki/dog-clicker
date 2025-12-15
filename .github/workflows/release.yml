@@ -117,7 +117,7 @@ jobs:
       - build-android
       - build-linux
       - build-windows
-      - deploy-web
+      - build-web
     permissions:
       contents: write
     steps:
