@@ -68,7 +68,7 @@ jobs:
       - run: flutter pub get
       - run: flutter build linux --release
 
-      - run: tar -czvf linux-release.tar.gz -C build/linux/x64/release/bundle .
+      - run: tar -czvf linux.tar.gz -C build/linux/x64/release/bundle .
       - uses: actions/upload-artifact@v6
         with:
           name: linux
@@ -121,10 +121,14 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: android,linux,windows
+          path: .
+          merge-multiple: true
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "android.*,linux,windows,web"
+          artifacts: '*'
           generateReleaseNotes: true
 
   deploy:
