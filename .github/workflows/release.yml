@@ -6,7 +6,7 @@ on:
       - 'v*'
 
 env:
-  NO_OPUS_OGG_LIBS: 1
+  NO_XIPH_LIBS: 1
 
 jobs:
   qc:
