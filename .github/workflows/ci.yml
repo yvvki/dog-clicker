@@ -9,6 +9,7 @@ on:
 
 env:
   NO_XIPH_LIBS: 1
+  TRY_SYSTEM_LIBS_FIRST: 1
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
