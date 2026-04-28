@@ -117,7 +117,6 @@ jobs:
       - build-android
       - build-linux
       - build-windows
-      - build-web
     permissions:
       contents: write
     steps:
@@ -130,6 +129,7 @@ jobs:
         with:
           artifacts: '*'
           generateReleaseNotes: true
+          immutableCreate: true
 
   deploy:
     name: Deploy Website
